@@ -143,8 +143,8 @@ export const AlmudProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     } catch (e) {
       console.error('Error reading auth user from localStorage', e);
     }
-    // Default to first user (Kenneth) initially logged in, or null if logged out
-    return INITIAL_USERS[0];
+    // Default to null — require login
+    return null;
   });
 
   const users = INITIAL_USERS;
