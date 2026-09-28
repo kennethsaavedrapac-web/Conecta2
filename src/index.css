@@ -30,7 +30,7 @@ body {
 
 html.dark body {
   background-color: #0A0F1D;
-  color: #F8FAFC;
+  color: #F1F5F9;
 }
 
 .font-serif {
@@ -227,36 +227,39 @@ html.dark .bg-\[\#FBFAF6\]\/95 {
   background-color: rgba(20, 27, 45, 0.97) !important;
 }
 
-/* Borders — lifted for better card definition */
+/* Borders — brighter for clear card definition */
 html.dark .border-\[\#E4DFD3\],
 html.dark .border-\[\#E4DFD3\]\/60,
 html.dark .border-\[\#E4DFD3\]\/70,
 html.dark .border-\[\#E4DFD3\]\/80 {
-  border-color: #293548 !important;
+  border-color: #334155 !important;
 }
 html.dark .divide-\[\#E4DFD3\] > :not([hidden]) ~ :not([hidden]) {
-  border-color: #293548 !important;
+  border-color: #334155 !important;
 }
 
-/* Primary text — pure white for maximum readability */
+/* Primary text — bright white for maximum readability */
 html.dark .text-\[\#1F2421\] {
-  color: #F1F5F9 !important;
+  color: #FFFFFF !important;
 }
 
-/* Secondary text — boosted to #CBD5E1 (Slate 300) for clear readability */
+/* Secondary text — boosted to #E2E8F0 (Slate 200) for strong readability */
 html.dark .text-\[\#6F7570\] {
-  color: #CBD5E1 !important;
+  color: #E2E8F0 !important;
 }
 html.dark .text-\[\#6F7570\]\/60 {
-  color: rgba(203, 213, 225, 0.78) !important;
+  color: rgba(226, 232, 240, 0.85) !important;
 }
 html.dark .text-\[\#6F7570\]\/80 {
-  color: rgba(203, 213, 225, 0.92) !important;
+  color: rgba(226, 232, 240, 0.95) !important;
+}
+html.dark .text-\[\#6F7570\]\/90 {
+  color: rgba(226, 232, 240, 0.97) !important;
 }
 
-/* Placeholder text — visible but clearly secondary */
+/* Placeholder text — clearly visible */
 html.dark .placeholder-\[\#6F7570\]\/60::placeholder {
-  color: rgba(148, 163, 184, 0.7) !important;
+  color: rgba(203, 213, 225, 0.75) !important;
 }
 
 /* Dark Mode Conecta2 Brand: Electric Neon Cyan & Royal Blue */
@@ -361,8 +364,66 @@ html.dark select {
   color: #F1F5F9 !important;
 }
 
-/* Badge / chip text on dark backgrounds */
-html.dark .text-\[11px\] {
-  color: #CBD5E1;
+/* ============================================================
+   DARK MODE — AGGRESSIVE SMALL TEXT CONTRAST BOOST
+   All small / secondary text gets maximum contrast treatment
+   ============================================================ */
+
+/* Font-size specific overrides — these catch ALL elements at these sizes */
+html.dark .text-\[11px\],
+html.dark .text-\[10px\],
+html.dark .text-\[9px\] {
+  color: #E2E8F0 !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Small text (text-xs = 12px) gets font-smoothing for readability */
+html.dark .text-xs {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure all text-white stays bright */
+html.dark .text-white {
+  color: #FFFFFF !important;
+}
+
+/* Stock level helper colors — much brighter in dark */
+html.dark .text-\[\#7AA682\] {
+  color: #86EFAC !important;
+}
+html.dark .text-\[\#E5B255\] {
+  color: #FDE68A !important;
+}
+
+/* Stock bar track — brighter so it's visible */
+html.dark .bg-\[\#E4DFD3\] {
+  background-color: #334155 !important;
+}
+
+/* Dark chip/tag backgrounds */
+html.dark .bg-\[\#1F2421\] {
+  background-color: #1E293B !important;
+}
+html.dark .bg-\[\#1F2421\]\/25 {
+  background-color: rgba(30, 41, 59, 0.35) !important;
+}
+html.dark .bg-\[\#1F2421\]\/30 {
+  background-color: rgba(30, 41, 59, 0.4) !important;
+}
+
+/* Semi-transparent canvas backgrounds */
+html.dark .bg-\[\#F6F3EC\]\/40 {
+  background-color: rgba(20, 27, 45, 0.5) !important;
+}
+
+/* Divider in product list rows */
+html.dark .divide-\[\#E4DFD3\] > :not([hidden]) ~ :not([hidden]),
+html.dark .divide-\[\#E4DFD3\]\/60 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #334155 !important;
+}
+
+/* Before pseudo-elements (vertical dividers) */
+html.dark .before\:bg-\[\#E4DFD3\]:before {
+  background-color: #334155 !important;
 }
 
