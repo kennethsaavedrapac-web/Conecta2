@@ -1,0 +1,340 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  
+  --color-conecta-blue: #0066FF;
+  --color-conecta-cyan: #00C8FF;
+  --color-conecta-navy: #0A0F1D;
+  --color-conecta-soft: #EBF3FF;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #F8FAFC;
+  color: #0F172A;
+  min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+html.dark body {
+  background-color: #0A0F1D;
+  color: #F8FAFC;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1E293B;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+::selection {
+  background: #C7D2FE;
+  color: #0047BA;
+}
+
+html.dark ::selection {
+  background: #0047BA;
+  color: #E0F2FE;
+}
+
+/* ============================================================
+   Conecta2 Brand Design System - Electric Cobalt & Cyan Palette
+   Direct mapping from isotype: #0066FF, #00C8FF, #0A0F1D
+   ============================================================ */
+
+/* 1. Canvas & Surface (Light) */
+.bg-\[\#F6F3EC\] {
+  background-color: #F8FAFC !important;
+}
+.bg-\[\#F6F3EC\]\/70,
+.bg-\[\#F6F3EC\]\/80,
+.bg-\[\#F6F3EC\]\/90 {
+  background-color: rgba(248, 250, 252, 0.88) !important;
+}
+
+.bg-\[\#FBFAF6\] {
+  background-color: #FFFFFF !important;
+}
+.bg-\[\#FBFAF6\]\/90 {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+.bg-\[\#FBFAF6\]\/95 {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+}
+
+/* 2. Borders & Dividers */
+.border-\[\#E4DFD3\],
+.border-\[\#E4DFD3\]\/60,
+.border-\[\#E4DFD3\]\/70,
+.border-\[\#E4DFD3\]\/80 {
+  border-color: #E2E8F0 !important;
+}
+.divide-\[\#E4DFD3\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #E2E8F0 !important;
+}
+
+/* 3. High-Contrast Slate Typography */
+.text-\[\#1F2421\] {
+  color: #0F172A !important;
+}
+.text-\[\#6F7570\] {
+  color: #64748B !important;
+}
+.text-\[\#6F7570\]\/60 {
+  color: rgba(100, 116, 139, 0.6) !important;
+}
+.text-\[\#6F7570\]\/80 {
+  color: rgba(100, 116, 139, 0.8) !important;
+}
+
+/* 4. Conecta2 Primary Brand: Electric Cobalt & Cyan */
+.bg-\[\#5F8468\] {
+  background-color: #0066FF !important;
+}
+.hover\:bg-\[\#4D6D55\]:hover {
+  background-color: #0052CC !important;
+}
+.text-\[\#5F8468\] {
+  color: #0066FF !important;
+}
+.border-\[\#5F8468\] {
+  border-color: #0066FF !important;
+}
+.border-\[\#5F8468\]\/60 {
+  border-color: rgba(0, 102, 255, 0.6) !important;
+}
+.bg-\[\#5F8468\]\/10 {
+  background-color: rgba(0, 102, 255, 0.08) !important;
+}
+.bg-\[\#DCE7DC\] {
+  background-color: #EBF3FF !important;
+}
+.hover\:text-\[\#4D6D55\]:hover,
+.hover\:text-\[\#5F8468\]:hover {
+  color: #0052CC !important;
+}
+.ring-\[\#5F8468\] {
+  --tw-ring-color: #0066FF !important;
+}
+.focus-visible\:ring-\[\#5F8468\]:focus-visible {
+  --tw-ring-color: #0066FF !important;
+}
+
+/* 5. Baja / Alert (Coral Red) */
+.bg-\[\#F3DDD1\] {
+  background-color: #FEE2E2 !important;
+}
+.text-\[\#C4623A\] {
+  color: #EF4444 !important;
+}
+.border-\[\#C4623A\] {
+  border-color: #EF4444 !important;
+}
+.border-\[\#C4623A\]\/30 {
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+.bg-\[\#C4623A\] {
+  background-color: #EF4444 !important;
+}
+
+/* 6. Amber / Ajuste */
+.bg-\[\#F8ECD5\] {
+  background-color: #FEF3C7 !important;
+}
+.text-\[\#C99A3B\] {
+  color: #D97706 !important;
+}
+.border-\[\#C99A3B\]\/30 {
+  border-color: rgba(217, 119, 6, 0.3) !important;
+}
+
+/* 7. Hover & Focus States (Light) */
+.hover\:bg-\[\#F6F3EC\]:hover {
+  background-color: #F1F5F9 !important;
+}
+.hover\:bg-\[\#E4DFD3\]:hover,
+.hover\:bg-\[\#E4DFD3\]\/60:hover {
+  background-color: #E2E8F0 !important;
+}
+.hover\:bg-\[\#FBFAF6\]:hover {
+  background-color: #F8FAFC !important;
+}
+.hover\:text-\[\#1F2421\]:hover {
+  color: #0066FF !important;
+}
+.focus\:bg-\[\#FBFAF6\]:focus {
+  background-color: #FFFFFF !important;
+}
+
+/* ============================================================
+   Conecta2 Dark Mode - Deep Space Navy & Neon Cyber Cyan
+   ============================================================ */
+
+html.dark .bg-\[\#F6F3EC\] {
+  background-color: #0A0F1D !important;
+}
+html.dark .bg-\[\#F6F3EC\]\/70,
+html.dark .bg-\[\#F6F3EC\]\/80,
+html.dark .bg-\[\#F6F3EC\]\/90 {
+  background-color: rgba(10, 15, 29, 0.88) !important;
+}
+
+html.dark .bg-\[\#FBFAF6\] {
+  background-color: #111827 !important;
+}
+html.dark .bg-\[\#FBFAF6\]\/90 {
+  background-color: rgba(17, 24, 39, 0.92) !important;
+}
+html.dark .bg-\[\#FBFAF6\]\/95 {
+  background-color: rgba(17, 24, 39, 0.96) !important;
+}
+
+html.dark .border-\[\#E4DFD3\],
+html.dark .border-\[\#E4DFD3\]\/60,
+html.dark .border-\[\#E4DFD3\]\/70,
+html.dark .border-\[\#E4DFD3\]\/80 {
+  border-color: #1E293B !important;
+}
+html.dark .divide-\[\#E4DFD3\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #1E293B !important;
+}
+
+html.dark .text-\[\#1F2421\] {
+  color: #F8FAFC !important;
+}
+html.dark .text-\[\#6F7570\] {
+  color: #94A3B8 !important;
+}
+html.dark .text-\[\#6F7570\]\/60 {
+  color: rgba(148, 163, 184, 0.6) !important;
+}
+html.dark .text-\[\#6F7570\]\/80 {
+  color: rgba(148, 163, 184, 0.8) !important;
+}
+
+/* Dark Mode Conecta2 Brand: Electric Neon Cyan & Royal Blue */
+html.dark .bg-\[\#5F8468\] {
+  background-color: #0066FF !important;
+}
+html.dark .hover\:bg-\[\#4D6D55\]:hover {
+  background-color: #1D70F5 !important;
+}
+html.dark .text-\[\#5F8468\] {
+  color: #38BDF8 !important;
+}
+html.dark .border-\[\#5F8468\] {
+  border-color: #0084FF !important;
+}
+html.dark .bg-\[\#5F8468\]\/10 {
+  background-color: rgba(0, 180, 255, 0.16) !important;
+}
+html.dark .bg-\[\#DCE7DC\] {
+  background-color: rgba(0, 102, 255, 0.22) !important;
+}
+html.dark .hover\:text-\[\#4D6D55\]:hover,
+html.dark .hover\:text-\[\#5F8468\]:hover {
+  color: #38BDF8 !important;
+}
+
+/* Dark Mode Baja / Danger */
+html.dark .bg-\[\#F3DDD1\] {
+  background-color: #450A0A !important;
+}
+html.dark .text-\[\#C4623A\] {
+  color: #F87171 !important;
+}
+html.dark .border-\[\#C4623A\] {
+  border-color: #F87171 !important;
+}
+html.dark .border-\[\#C4623A\]\/30 {
+  border-color: rgba(248, 113, 113, 0.3) !important;
+}
+
+/* Dark Mode Amber / Ajuste */
+html.dark .bg-\[\#F8ECD5\] {
+  background-color: #451A03 !important;
+}
+html.dark .text-\[\#C99A3B\] {
+  color: #FBBF24 !important;
+}
+html.dark .border-\[\#C99A3B\]\/30 {
+  border-color: rgba(251, 191, 36, 0.3) !important;
+}
+
+/* Dark Mode Hover & Focus */
+html.dark .hover\:bg-\[\#F6F3EC\]:hover {
+  background-color: #172033 !important;
+}
+html.dark .hover\:bg-\[\#E4DFD3\]:hover,
+html.dark .hover\:bg-\[\#E4DFD3\]\/60:hover {
+  background-color: #1E293B !important;
+}
+html.dark .hover\:bg-\[\#FBFAF6\]:hover {
+  background-color: #1E293B !important;
+}
+html.dark .hover\:text-\[\#1F2421\]:hover {
+  color: #38BDF8 !important;
+}
+html.dark .focus\:bg-\[\#FBFAF6\]:focus {
+  background-color: #111827 !important;
+}
+
+/* Shadows */
+.shadow-\[0_16px_40px_rgba\(31\,36\,33\,0\.06\)\] {
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.07) !important;
+}
+.shadow-\[0_24px_50px_rgba\(31\,36\,33\,0\.12\)\] {
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12) !important;
+}
+
+html.dark .shadow-\[0_16px_40px_rgba\(31\,36\,33\,0\.06\)\],
+html.dark .shadow-\[0_24px_50px_rgba\(31\,36\,33\,0\.12\)\] {
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6) !important;
+}
+
+select option {
+  background-color: #FFFFFF;
+  color: #0F172A;
+}
+
+html.dark select option {
+  background-color: #111827;
+  color: #F8FAFC;
+}
