@@ -176,10 +176,10 @@ export const ReportesPage: React.FC = () => {
                   axisLine={false}
                   tickLine={false}
                   tick={{ fill: chartTick, fontSize: 11 }}
-                  tickFormatter={(val) => `C$${val}`}
+                  tickFormatter={(val: number) => `C$${val}`}
                 />
                 <Tooltip
-                  content={({ active, payload }) => {
+                  content={({ active, payload }: any) => {
                     if (active && payload && payload.length) {
                       const data = payload[0].payload;
                       return (
