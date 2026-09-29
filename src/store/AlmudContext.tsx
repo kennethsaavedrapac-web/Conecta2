@@ -79,11 +79,11 @@ const STORAGE_KEYS = {
   SALES: 'conecta2_sales_v1',
   MOVEMENTS: 'conecta2_movements_v1',
   AUTH_USER: 'conecta2_auth_user_v1',
-  THEME: 'conecta2_theme_mode_v1',
+  THEME: 'conecta2_theme_mode_v2',
 };
 
 export const AlmudProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Theme state
+  // Theme state: defaults to 'light'
   const [theme, setThemeState] = useState<ThemeMode>(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEYS.THEME);
@@ -91,7 +91,7 @@ export const AlmudProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     } catch (e) {
       console.error('Error reading theme from localStorage', e);
     }
-    return 'system';
+    return 'light';
   });
 
   const [systemPrefersDark, setSystemPrefersDark] = useState(() => {
@@ -116,6 +116,10 @@ export const AlmudProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       root.classList.add('dark');
     } else {
       root.classList.remove('dark');
+    }
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', resolvedTheme === 'dark' ? '#0A0F1D' : '#F6F3EC');
     }
     try {
       localStorage.setItem(STORAGE_KEYS.THEME, theme);
